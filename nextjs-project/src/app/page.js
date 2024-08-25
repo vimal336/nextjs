@@ -1,15 +1,32 @@
-import Image from "next/image";
+"use client";  // Mark this component as a Client Component
+
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <button className="bg-blue-500 rounded text-white font-bold py-2 px-2 px-4 ">Back</button>
-      <h1>Next JS Project</h1>
-      <button>Back</button>
-      <Link className="text-blue-600" href="/">Home</Link>
-      <Link className="text-blue-600" href="/dashboard">Dashboard</Link>
-      <Link className="text-blue-600" href="/dashboard/settings">Settings</Link>
+    <main className="flex min-h-screen flex-col items-center justify-center p-8 space-y-8">
+      <h1 className="text-5xl font-bold text-center">Welcome to Next.js Project</h1>
+      
+      {/* Navigation Buttons */}
+      <div className="flex flex-col items-center space-y-4">
+        <Link href="/" className="text-blue-600 text-xl">
+          Home
+        </Link>
+        <Link href="/dashboard" className="text-blue-600 text-xl">
+          Dashboard
+        </Link>
+        <Link href="/dashboard/settings" className="text-blue-600 text-xl">
+          Settings
+        </Link>
+      </div>
+
+      {/* Back Button */}
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => window.history.back()}
+      >
+        Back
+      </button>
     </main>
   );
 }
