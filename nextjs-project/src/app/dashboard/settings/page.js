@@ -4,8 +4,6 @@ import { useRouter } from "next/navigation";
 
 export default function Settings() {
   const router = useRouter();
-  const [name, setName] = useState("John Doe");
-  const [email, setEmail] = useState("john.doe@example.com");
   const [password, setPassword] = useState("");
   const [darkMode, setDarkMode] = useState(false);
 
@@ -36,38 +34,6 @@ export default function Settings() {
       </button>
       
       <h1 className="text-4xl font-bold mb-8">Settings Page</h1>
-
-      <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h2 className="text-2xl font-bold mb-4">Profile Information</h2>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            Name
-          </label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            Email
-          </label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <button
-          onClick={saveProfile}
-          className="bg-green-500 hover:bg-green-700 rounded text-white font-bold py-2 px-4"
-        >
-          Edit Profile
-        </button>
-      </div>
 
       <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-6 mb-8">
         <h2 className="text-2xl font-bold mb-4">Change Password</h2>
