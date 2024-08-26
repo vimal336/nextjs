@@ -7,7 +7,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-center p-8 space-y-8">
       <h1 className="text-5xl font-bold text-center">Welcome to Next.js Project</h1>
       
-      {/* Navigation Buttons */}
+
       <div className="flex flex-col items-center space-y-4">
         <Link href="/" className="text-blue-600 text-xl">
           Home
