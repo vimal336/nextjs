@@ -1,11 +1,15 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function Settings() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [password, setPassword] = useState("");
   const [darkMode, setDarkMode] = useState(false);
+
+  // Example: Extract a query parameter (e.g., 'theme')
+  const themeParam = searchParams.get("theme");
 
   const back = () => {
     router.push("/dashboard");
@@ -20,8 +24,15 @@ export default function Settings() {
   };
 
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    alert(`Theme changed to ${darkMode ? "Light" : "Dark"} Mode!`);
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+
+    // Update the URL with the new theme query parameter
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set("theme", newDarkMode ? "dark" : "light");
+    router.push(`/settings?${newParams.toString()}`);
+    
+    alert(`Theme changed to ${newDarkMode ? "Dark" : "Light"} Mode!`);
   };
 
   return (
@@ -58,6 +69,7 @@ export default function Settings() {
 
       <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-6 mb-8">
         <h2 className="text-2xl font-bold mb-4">Theme</h2>
+        <p>Current theme from URL: {themeParam || "None"}</p>
         <button
           onClick={toggleTheme}
           className="bg-gray-500 hover:bg-gray-700 rounded text-white font-bold py-2 px-4"
