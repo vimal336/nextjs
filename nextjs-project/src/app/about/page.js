@@ -1,11 +1,15 @@
+"use client"
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 export default function About() {
+  const searchParams = useSearchParams();
+
+  const paramValue = searchParams.get('paramName');
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      
-<h1>About page</h1>
-       
-    </main>
+    <div>
+      <p>Query Parameter Value: {paramValue}</p>
+    </div>
   );
-}
+};
