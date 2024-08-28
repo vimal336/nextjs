@@ -57,7 +57,7 @@ export default function InfiniteScroll() {
 
   useEffect(() => {
     if (!isFetching) {
-      setIsLoadingMore(true);
+      setIsLoadingMore(false);
     }
   }, [isFetching]);
 
