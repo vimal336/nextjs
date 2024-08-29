@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Navbar from "./navbar/page"
 
 
 export const metadata = {
@@ -9,27 +10,8 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-    <nav className="bg-gray-800 p-4">
-        <ul className="flex space-x-4">
-          <li>
-            <Link href="/about">
-              <a className="text-white hover:text-gray-300">About</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a className="text-white hover:text-gray-300">Contact</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/adduser">
-              <a className="text-white hover:text-gray-300">Add User</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+    <Navbar/>
 
-      <h1 className="text-2xl font-bold mt-4">User Management</h1>
     </>
   );
 }

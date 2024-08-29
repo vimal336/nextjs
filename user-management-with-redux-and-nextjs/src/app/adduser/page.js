@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem, updateItem, deleteItem } from "../reducers/itemSlice";
+import Navbar from "./navbar/page"
 
 export default function Home() {
   const items = useSelector((state) => state.items.items);
@@ -31,6 +32,7 @@ export default function Home() {
 
   return (
     <div>
+      <Navbar/>
       <h1>CRUD with Redux Persist</h1>
       <input
         type="text"
