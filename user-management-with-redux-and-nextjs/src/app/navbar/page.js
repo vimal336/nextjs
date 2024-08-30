@@ -1,35 +1,35 @@
 import Link from "next/link";
-
-
-export const metadata = {
-  title: "Header",
-  description: "Generated for Header page",
-};
+import "../globals.css";
 
 export default function Header() {
   return (
     <>
-   <nav className="bg-gray-800 p-4">
-        <ul className="flex space-x-4">
+      <nav className="bg-gray-800 py-4 md:py-6 lg:py-8">
+        <ul className="flex justify-center space-x-4">
           <li>
-            <Link href="/about" className="text-white hover:text-gray-300">
-              About
+            <Link href="/" className="text-white hover:text-gray-300 transition duration-300 ease-in-out">
+             HOME
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="text-white hover:text-gray-300">
-              Contact
+            <Link href="/about" className="text-white hover:text-gray-300 transition duration-300 ease-in-out">
+             ABOUT
             </Link>
           </li>
           <li>
-            <Link href="/adduser" className="text-white hover:text-gray-300">
-              Add User
+            <Link href="/contact" className="text-white hover:text-gray-300 transition duration-300 ease-in-out">
+             CONTACT
+            </Link>
+          </li>
+          <li>
+            <Link href="/adduser" className="text-white hover:text-gray-300 transition duration-300 ease-in-out">
+              ADD USER
             </Link>
           </li>
         </ul>
       </nav>
 
-      <h1 className="text-2xl font-bold mt-4">User Management</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center uppercase mt-8">User Management</h1>
     </>
   );
 }

@@ -16,7 +16,7 @@ export default function StoreProvider({ children }) {
 
   return (
     <Provider store={storeRef.current}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={<div className="text-center mt-8 text-green-500 font-bold bg-red-500">Loading...</div>} persistor={persistor}>
         {children}
       </PersistGate>
     </Provider>
