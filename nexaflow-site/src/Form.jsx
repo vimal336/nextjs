@@ -60,7 +60,7 @@ const Form = () => {
           />
         </label>
       </div>
-      <button type="submit">Submitform</button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
