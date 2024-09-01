@@ -17,7 +17,7 @@ const Form = () => {
           'x-api-key': '~IxP2nxD3iyH0',
         },
         body: JSON.stringify({
-          Name: nae,
+          Name: name,
           Age: age,
         }),
       });
