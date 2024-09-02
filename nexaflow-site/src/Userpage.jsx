@@ -144,7 +144,7 @@ const Userpage = () => {
       {cms_user1 && (
         <div>
           <h2>User 1</h2>
-          <pre>{JSON.stringify(cms_user1, null, 2)}</pre>
+          {JSON.stringify(cms_user1, null, 2)}
         </div>
       )}
       {cms_namelist && (
@@ -153,21 +153,22 @@ const Userpage = () => {
           {JSON.stringify(cms_namelist, null, 2)}
         </div>
       )}
-     {cms_All_List && cms_All_List.length > 0 && (
-  <div>
-    <h2>All List</h2>
-    <ul>
-      {cms_All_List[0].All_List.map((item, index) => (
-        <li key={index}>{item.lists}</li>
-      ))}
-    </ul>
-  </div>
-)}
-
+      {cms_All_List && cms_All_List.length > 0 && (
+        <div>
+          <h2>All List</h2>
+          <ul>
+            {cms_All_List[0].All_List.map((item, index) => (
+              <li key={index}>{item.lists}</li>
+            ))}
+          </ul>
+        </div>
+      )}
       {cms_groups && (
         <div>
           <h2>Groups</h2>
-          {JSON.stringify(cms_groups, null, 2)}
+          {Object.values(cms_groups).map((groupDetail, index) => (
+            <p key={index}>{groupDetail}</p>
+          ))}
         </div>
       )}
     </div>
