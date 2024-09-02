@@ -97,7 +97,7 @@ const Userpage = () => {
     groups: cms_groups,
     user1: cms_user1,
     namelist: cms_namelist,
-    All_List: cms_All_List,
+    //All_List: cms_All_List,
   } = data;
 
   return (
@@ -131,10 +131,15 @@ const Userpage = () => {
       )}
       {cms_customer_review && (
         <div>
-          <h2>Customer Review</h2>
-          {JSON.stringify(cms_customer_review, null, 2)}
+          <h2>User 1</h2>
+          <p>
+            {cms_customer_review
+              .replace(/<\/?[^>]+(>|$)/g, "")
+              .replace(/\n/g, " ")}
+          </p>
         </div>
       )}
+
       {cms_user2name && (
         <div>
           <h2>User 2 Name</h2>
@@ -144,25 +149,15 @@ const Userpage = () => {
       {cms_user1 && (
         <div>
           <h2>User 1</h2>
-          {JSON.stringify(cms_user1, null, 2)}
+          <p>{cms_user1}</p>
         </div>
       )}
-      {cms_namelist && (
-        <div>
-          <h2>Name List</h2>
-          {JSON.stringify(cms_namelist, null, 2)}
-        </div>
-      )}
-      {cms_All_List && cms_All_List.length > 0 && (
-        <div>
-          <h2>All List</h2>
-          <ul>
-            {cms_All_List[0].All_List.map((item, index) => (
-              <li key={index}>{item.lists}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+
+      {cms_namelist &&
+        cms_namelist[0]?.All_List &&
+        cms_namelist[0].All_List.map((item, index) => (
+          <p key={index}>{item.lists}</p>
+        ))}
       {cms_groups && (
         <div>
           <h2>Groups</h2>
