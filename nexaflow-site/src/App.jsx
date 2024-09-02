@@ -1,12 +1,16 @@
 import './App.css'
-import Form from './Form'
+// import Userblock from './Userblock'
+// import Form from './Form'
+import Userpage from './Userpage'
 function App() {
  
   return (
     <>
 
    <h4>Nexaflow</h4>
-   <Form/>
+   {/* <Form/> */}
+   <Userpage/>
+   {/* <Userblock/> */}
     </>
   )
 }
