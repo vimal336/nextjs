@@ -69,7 +69,7 @@ export default function InfiniteScroll() {
 
   return (
     <div className="p-4 max-w-xl mx-auto">
-      <h2 className="text-2xl bg-yellow-500 font-bold text-center mb-4">Infinite Scroll with Pagination</h2>
+      <h2 className="text-2xl bg-yellow-500 font-bold text-center mb-4">Infinite x with Pagination</h2>
       <ul ref={listRef} className="space-y-2">
         {posts.map((post) => (
           <li key={post.id} className="p-4 bg-white rounded shadow-md hover:bg-gray-600 transition">
