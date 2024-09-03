@@ -84,7 +84,7 @@ export default function InfiniteScroll() {
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1 || isFetching}
-          className="px-4 py-2 bg-blue-500 text-white  "
+          className="px-4 py-2 bg-blue-500 text-white rounded "
         >
           Previous
         </button>
