@@ -1,13 +1,17 @@
 import { useState } from 'react';
 
-const Postform = () => {
-  const [name, setName] = useState('');
-  const [age, setAge] = useState('');
-  const [response, setResponse] = useState(null);
-  const [error, setError] = useState(null);
+const PostForm = () => {
 
-  const handlePostRequest = (event) => {
-    event.preventDefault(); // Prevent form submission from reloading the page
+  const [name, setName] = useState('');
+  const [mailId, setMailId] = useState('');
+  const [mobileNo, setMobileNo] = useState('');
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
 
     const options = {
       method: 'POST',
@@ -16,42 +20,64 @@ const Postform = () => {
         'content-type': 'application/json',
         'x-api-key': '~IxP2nxD3iyH0'
       },
-      body: JSON.stringify({ name, age })
+      body: JSON.stringify({ name, 'mail-id': mailId, 'mobile-no': mobileNo })
     };
 
-    fetch('https://api.nexaflow.xyz/api/form/66d3085dc4843fadfbfb37b5', options)
-      .then(response => response.json())
-      .then(data => setResponse(data))
-      .catch(err => setError(err));
+    try {
+      const response = await fetch('https://api.nexaflow.xyz/api/form/66d59e39c4843fadfbfb41f6', options);
+      const result = await response.json();
+
+
+      if (response.ok) {
+        setSuccess('Form submitted successfully!');
+        setError(null);
+      } else {
+        setError(result.message || 'Failed to submit form');
+        setSuccess(null);
+      }
+    } catch (err) {
+      setError('An error occurred while submitting the form');
+      setSuccess(null);
+    }
   };
 
   return (
     <div>
-      <form onSubmit={handlePostRequest}>
+      <h4>Submit Your Details</h4>
+      <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Name:</label>
+          <label>Name:</label>
           <input
-            id="name"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </div>
         <div>
-          <label htmlFor="age">Age:</label>
+          <label>Mail ID:</label>
           <input
-            id="age"
-            type="text"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
+            type="email"
+            value={mailId}
+            onChange={(e) => setMailId(e.target.value)}
+            required
           />
         </div>
-        <button type="submit" style={{ backgroundColor: 'green' }}>Submit Form</button>
+        <div>
+          <label>Mobile No:</label>
+          <input
+            type="text"
+            value={mobileNo}
+            onChange={(e) => setMobileNo(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">Submit</button>
       </form>
-      {response && <pre>Response: {JSON.stringify(response, null, 2)}</pre>}
-      {error && <pre>Error: {error.message}</pre>}
+      {success && <p style={{ color: 'green' }}>{success}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 };
 
-export default Postform;
+export default PostForm;
