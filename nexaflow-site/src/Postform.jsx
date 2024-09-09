@@ -35,7 +35,7 @@ const PostForm = () => {
         setError(result.message || 'Failed to submit form');
         setSuccess(null);
       }
-    } catch (err) {
+    } catch () {
       setError('An error occurred while submitting the form');
       setSuccess(null);
     }
