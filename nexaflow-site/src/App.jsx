@@ -2,6 +2,7 @@ import './App.css'
 // import Userblock from './Userblock'
 import Form from './Form'
 import Postform from './Postform'
+import Postsheet from './Postsheet'
 import Userpage from './Userpage'
 
 function App() {
@@ -10,9 +11,11 @@ function App() {
     <>
 
    <h4>Nexaflow</h4>
-   <Postform/>
+   {/* <Postform/>
    <Form/> 
-   <Userpage/>
+   <Userpage/> */}
+
+   <Postsheet/>
 
    {/* <Userblock/> */}
     </>

@@ -3,9 +3,10 @@ import { useState } from "react";
 const Postsheet = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    message: ""
+    age: ""
   });
+
+  const [submitMessage, setSubmitMessage] = useState(""); // State for submit message
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,10 +30,14 @@ const Postsheet = () => {
         body: JSON.stringify(formData)
       });
 
-      const result = await response.json();
-      console.log("Form submission successful", result);
+      if (response.ok) {
+        setSubmitMessage("Form submitted successfully!"); // Success message
+      } else {
+        const result = await response.json();
+        setSubmitMessage(`Error: ${result.message || "Form submission failed"}`); // Display error message
+      }
     } catch (error) {
-      console.error("Error submitting the form", error);
+      setSubmitMessage(`Error: ${error.message || "Form submission failed"}`); // Display error message
     }
   };
 
@@ -52,28 +57,20 @@ const Postsheet = () => {
           />
         </div>
         <div>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="age">Age:</label>
           <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
+            type="number"
+            id="age"
+            name="age"
+            value={formData.age}
             onChange={handleChange}
             required
           />
         </div>
         <button type="submit">Submit</button>
       </form>
+
+      {submitMessage && <p>{submitMessage}</p>} 
     </div>
   );
 };
