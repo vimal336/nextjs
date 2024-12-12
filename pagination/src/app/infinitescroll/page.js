@@ -15,7 +15,7 @@ export default function InfiniteScroll() {
         throw new Error('Failed to fetch posts');
       }
       const data = await response.json();
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate network delay
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // for Simulate network delay
       return data;
     } catch (error) {
       console.error(error);
