@@ -9,7 +9,7 @@ const usebtn = () => {
       <Button className="w-32 mb-4">Sign In</Button>
       
       {/* Second Button with different width and style */}
-      <Button className="w-48 bg-green-500 hover:bg-green-700">Sign In with a Google</Button>
+      <Button className="w-48 bg-green-500 hover:bg-green-700">Sign In with Google</Button>
 
       <Button className="w-48 bg-red-500 hover:bg-green-700">Sign up with a Google</Button>
     </div>
