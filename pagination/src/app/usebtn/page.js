@@ -11,7 +11,7 @@ const usebtn = () => {
       {/* Second Button with different width and style */}
       <Button className="w-48 bg-green-500 hover:bg-green-700">Sign In with Google</Button>
 
-      <Button className="w-48 bg-red-500 hover:bg-green-700">Sign up with Google</Button>
+      <Button className="w-48 bg-red-500 hover:bg-green-700">Sign up with a Google</Button>
     </div>
   );
 };
