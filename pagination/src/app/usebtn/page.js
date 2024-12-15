@@ -4,7 +4,7 @@ import Button from '../button/page';
 const usebtn = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-2xl mb-4">Sign In</h1>
+      <h1 className="text-2xl mb-4">Sign In button</h1>
       {/* First Button with default width */}
       <Button className="w-32 mb-4">Sign In</Button>
       
