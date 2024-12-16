@@ -1,1 +1,1 @@
-my new branch called feature-branch 
+my new branch called new-feature
