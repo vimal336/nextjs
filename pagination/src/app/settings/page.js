@@ -52,7 +52,7 @@ function Settings() {
                 onChange={() => setNotifications(!notifications)}
                 className="mr-2"
               />
-              Enable Notifications
+              Enable 
             </label>
           </div>
           <button
