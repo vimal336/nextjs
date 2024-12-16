@@ -18,6 +18,9 @@ export default function Home() {
         <Link href="/dashboard/settings" className="text-blue-600 text-xl">
           Settings
         </Link>
+        <Link href="/purpose" className="text-blue-600 text-xl">
+          book
+        </Link>
       </div>
 
       <button

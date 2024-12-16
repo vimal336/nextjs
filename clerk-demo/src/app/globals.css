@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #dde6e1;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #afafaf;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cl-formButtonPrimary {
+  font-size: 14px;
+  text-transform: none;
+  background-color: #f01a1a;
+}
+
+.cl-formButtonPrimary:hover,
+.cl-formButtonPrimary:focus,
+.cl-formButtonPrimary:active {
+  background-color: #33d113;
+}
+
+/* Increase specificity */
+body .cl-formButtonPrimary {
+  font-size: 14px;
+  text-transform: none;
+  background-color: #f01a1a;
+}
+
+body .cl-formButtonPrimary:hover,
+body .cl-formButtonPrimary:focus,
+body .cl-formButtonPrimary:active {
+  background-color: #33d113;
+}
+
+/* Increase specificity */
+body .dev-banner {
+  background-color: #c50000 !important;
+  color: #fff;
+}
+
+body .dev-banner p {
+  background-color: red !important;
+  color: #fff; /* Added this line to set the text color */
+}
+
+
+.cl-internal-1tpvhd8 {
+  color: rgb(10 10 229);
+
+}
+
+body .cl-formButtonPrimary {
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: #b3da06;
+}
+
